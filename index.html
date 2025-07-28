@@ -4,156 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D3 Sankey Diagrams with ESS | Occupational Classes</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            margin: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        header {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header img {
-            max-width: 100px;
-            vertical-align: middle;
-        }
-        header h1 {
-            display: inline;
-            margin-left: 20px;
-            vertical-align: middle;
-            font-size: 24px;
-        }
-        .social-links {
-            margin-top: 10px;
-            text-align: center;
-        }
-        .social-links a {
-            margin: 0 10px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 20px;
-        }
-        .main-content {
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            text-align: center;
-            color: #2c3e50;
-        }
-        .links {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: #2980b9;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-        .links a::before {
-            content: '🔗';
-            margin-right: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f7f7f7;
-        }
-        .tg {
-            border-collapse: collapse;
-            border-spacing: 0;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .tg td, .tg th {
-            border: 1px solid #ddd;
-            padding: 10px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 14px;
-        }
-        .tg .tg-8bgf {
-            font-style: italic;
-            text-align: center;
-            vertical-align: top;
-        }
-        .tg .tg-baqh, .tg .tg-amwm {
-            text-align: center;
-            vertical-align: top;
-            font-weight: bold;
-        }
-        .tg .tg-rvyq, .tg .tg-ihln {
-            font-style: italic;
-            font-weight: bold;
-            text-align: center;
-            vertical-align: top;
-        }
-        .tg .tg-0pky, .tg .tg-0lax {
-            text-align: left;
-            vertical-align: top;
-        }
-        .endnote {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .endnote a {
-            color: #2980b9;
-            text-decoration: none;
-        }
-        .endnote a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
-        <img src="sankey_icon.png" alt="Logo">
+        <img src="sankey_icon.png" alt="Sankey Icon">
         <h1>Sankey Diagrams with Occupational Classes</h1>
-        <div class="social-links">
-            <a href="https://mmuratardag.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
-            <a href="https://github.com/mmuratardag" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/mmuratardag" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
     </header>
+
     <div class="main-content">
-        <h2>Recent empirical research affirms that class definitions should be based on occupation rather than income<sup><a href="#endnote">1</a></sup></h2>
+        <h2>Recent empirical research affirms that class definitions should be based on occupation rather than income</h2>
         <div class="links">
-            <a href="flow_chart_5c.html">Chart with 5 Professional Classes & Income Level</a> |
-            <a href="flow_chart_8c.html">Chart with 8 Professional Classes & Vote Recall</a> | 
-            <a href="flow_chart_16c.html">Chart with 16 Professional Classes & Gender</a>
+            <a href="flow_chart_5c.html">5 Classes & Income</a> |
+            <a href="flow_chart_8c.html">8 Classes & Voting</a> | 
+            <a href="flow_chart_16c.html">16 Classes & Gender</a>
         </div>
         <p>While the middle class is growing, especially in professional and managerial positions, the working class is shrinking. These changes have significant economic, political, and social impacts. Unions experience fluctuations in membership as they respond to the evolving social structure and labor market.</p>
         <p>This visualization project utilizes the professional class definitions proposed by Oesch to illustrate patterns in migration background, union membership status, professional class, income levels, vote recall, and gender in Germany between 2014 and 2023, using representative samples from the European Social Survey.</p>
-        <p>Oesch outlines a comprehensive 16-class framework for researching topics such as labor market stratification and gender segregation. For research on topics like party preferences and political participation, these 16 classes can be collapsed into 8, and for studying intergenerational social mobility and inequality, they can be further collapsed into 5 classes.</p>
-        <p>More information can be found in the tables below.</p>
+        <p>Oesch outlines a detailed 16-class schema for research into labor market stratification or gender segregation. These classes can be collapsed into 8 for topics such as party preferences and political participation and 5 for intergenerational social mobility and inequality. The details can be seen in the tables below.</p>
+    </div>
 
-        <table class="tg">
+    <div class="main-content">
+        <h2>Class Definitions</h2>
+    <table class="tg">
             <thead>
                 <tr>
-                    <th class="tg-baqh" colspan="4"><span style="font-weight:bold">The detailed 16-class schema based on four hierarchical levels and four work logics (useful for research into topics such as labour market stratification or gender segregation)</span></th>
+                    <th class="tg-baqh" colspan="4"><span style="font-weight:bold">The detailed 16-class schema based on four hierarchical levels and four work logics (useful for research into topics such as <i>labour market stratification</i> or <i>gender segregation</i>)</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -197,7 +74,7 @@
         <table class="tg">
             <thead>
                 <tr>
-                    <th class="tg-amwm" colspan="4">The collapsed 8-class schema based on two hierarchical levels and four work logics (useful for research into topics such as party preferences and political participation)</th>
+                    <th class="tg-amwm" colspan="4">The collapsed 8-class schema based on two hierarchical levels and four work logics (useful for research into topics such as <i>party preferences</i> and <i>political participation</i>)</th>
                 </tr>
             </thead>
             <tbody>
@@ -225,7 +102,7 @@
         <table class="tg">
             <thead>
                 <tr>
-                    <th class="tg-ihln" colspan="2">The collapsed 5-class schema based on four hierarchical levels and small business owners (useful for research into topics such as intergenerational social mobility and social inequality)</th>
+                    <th class="tg-ihln" colspan="2">The collapsed 5-class schema based on four hierarchical levels and small business owners (useful for research into topics such as <i>intergenerational social mobility</i> and <i>social inequality</i>)</th>
                 </tr>
             </thead>
             <tbody>
@@ -246,18 +123,25 @@
                 </tr>
             </tbody>
         </table>
-
-        <p>The charts present descriptive statistics as percentages, accounting for stratification and design weights. Users can switch between years and filter by migration background, union membership status, class, income, vote recall, and gender.</p>
-
-        <p class="endnote" id="endnote">
-            <a href="https://joint-research-centre.ec.europa.eu/reports-and-technical-documentation/contemporary-class-analysis_en" target="_blank">Oesch, D. (2022). <i>Contemporary Class Analysis.</i> JRC Working Papers Series on Social Classes in the Digital Age, 2022/01. European Commission, Joint Research Centre, Seville, JRC126506.</a>
-        </p>
-
-        <div class="links">
-            <a href="flow_chart_5c.html">Chart with 5 Professional Classes & Income Level</a> |
-            <a href="flow_chart_8c.html">Chart with 8 Professional Classes & Vote Recall</a> | 
-            <a href="flow_chart_16c.html">Chart with 16 Professional Classes & Gender</a>
-        </div>
+</div>
+    <div class="main-content">
+        <p>The charts present descriptive statistics as percentages, accounting for stratification and design weights. Users can switch between years and filter by migration background, union membership status, class, income, vote recall, and gender. <b><i><a href="how_to_read.html">Here</a></i></b> is a helper page on how to read the flow-charts.</a></p>
+        <p><a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC126506" target="_blank" rel="noopener">Oesch, D. (2022). <i>Contemporary Class Analysis.</i> JRC Working Papers Series on Social Classes in the Digital Age, 2022/01. European Commission, Joint Research Centre, Seville, JRC126506.</a></p>
     </div>
+
+    <div class="links">
+            <a href="how_to_read.html">How to Make Sense of the Charts</a> |
+            <a href="flow_chart_5c.html">5 Classes & Income</a> |
+            <a href="flow_chart_8c.html">8 Classes & Voting</a> | 
+            <a href="flow_chart_16c.html">16 Classes & Gender</a>
+        </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://mmuratardag.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe"></i></a>
+            <a href="https://github.com/mmuratardag" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mmuratardag" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
 </body>
 </html>

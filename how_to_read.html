@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Read the Sankey Diagrams</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>How to Interpret the Sankey Diagrams</h1>
+    </header>
+
+    <div class="main-content">
+        <p>Sankey diagrams are a type of flow diagram where the width of the arrows is proportional to the flow quantity. They are excellent for visualizing the flow of data through different stages or categories. Here's how to interpret the charts on this website:</p>
+
+        <h3>1. Columns (Stages)</h3>
+        <p>Each vertical column on the chart represents a different categorical variable from your data. The flow moves from left to right, showing how the data is broken down from one category to the next.</p>
+        <p><em>For example, in the "16 Classes & Gender" chart:</em></p>
+        <ul>
+            <li>The first column is <strong>Migration Background</strong>.</li>
+            <li>The second is <strong>Trade Union Member Status</strong>.</li>
+            <li>The third is <strong>Professional Class</strong>.</li>
+            <li>The fourth is <strong>Gender</strong>.</li>
+        </ul>
+
+        <h3>2. Nodes (Rectangles)</h3>
+        <p>Each rectangle within a column is a <strong>node</strong>.</p>
+        <ul>
+            <li><strong>What it represents:</strong> A specific category within that column (e.g., "No" for Migration Background, or "Skilled Workers" for Professional Class).</li>
+            <li><strong>Height of the node:</strong> The height of each rectangle is proportional to the total value (the sum of the <code>weight</code> column in your data) for that category. A taller node means a larger number of individuals fall into that category for the selected year.</li>
+        </ul>
+
+        <h3>3. Links (Flows)</h3>
+        <p>The colored bands that connect nodes between columns are the <strong>links</strong> or <strong>flows</strong>.</p>
+        <ul>
+            <li><strong>What they represent:</strong> The links show the relationship between categories in adjacent columns. For instance, a link between "No" (Migration Background) and "Yes, currently" (Union Status) shows how many people with no migration background are currently union members.</li>
+            <li><strong>Thickness of the link:</strong> The thickness of the band is proportional to the value of that specific flow. A thicker band indicates a larger quantity of data flowing from the source node to the target node.</li>
+        </ul>
+
+        <h3>4. Labels on the Nodes</h3>
+        <p>Each node has a detailed label to give you precise information:</p>
+        <ul>
+            <li><strong>Category Name:</strong> The name of the specific category (e.g., "Skilled Workers").</li>
+            <li><strong>N (Count):</strong> This is the total weighted count for that specific node. For example, <code>N=117</code> means the total weight for that category is 117.</li>
+            <li><strong>Percentage (%):</strong> This shows what percentage of the <em>total initial population</em> (the sum of all nodes in the very first column) is represented by this node. This helps you understand the relative size of each category in the overall context.</li>
+        </ul>
+
+        <h3>5. Interactivity (Tooltips)</h3>
+        <p>To get more specific details about a particular flow:</p>
+        <ul>
+            <li><strong>Hover over a link:</strong> When you move your mouse over one of the flowing bands, a tooltip will appear.</li>
+            <li><strong>What it shows:</strong> The tooltip displays the source and target categories and the exact <code>N</code> (count/weight) for that specific flow. For example: <code>Skilled workers → Male <br> N = 61</code>. This tells you the exact number of individuals who are both "Skilled workers" and "Male".</li>
+        </ul>
+
+        <h3>Putting It All Together: An Example</h3>
+        <p>Let's trace a path on the <strong>"5 Classes & Income"</strong> chart:</p>
+        <ol>
+            <li>You start at the <strong>Migration Background</strong> column on the far left. Find the node for `"No"`. The label tells you the total count and the percentage of the population with no migration background.</li>
+            <li>Follow the colored link that flows from the `"No"` node to the `"Yes, currently"` node in the <strong>Trade Union Member Status</strong> column. The thickness of this link shows you how many of the people with no migration background are currently in a union.</li>
+            <li>From the `"Yes, currently"` node, you can then follow another link to a specific <strong>Professional Class</strong>, for example, `"Skilled workers"`.</li>
+            <li>Finally, you can see how that group is distributed across the different <strong>Income Levels</strong> in the last column.</li>
+        </ol>
+        <p>By following these paths, you can visually analyze relationships and distributions within the data for any given year.</p>
+    </div>
+
+    <div class="links">
+        <a href="index.html">Home</a> |
+        <a href="flow_chart_5c.html">5 Classes & Income</a> |
+        <a href="flow_chart_8c.html">8 Classes & Voting</a> | 
+        <a href="flow_chart_16c.html">16 Classes & Gender</a>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://mmuratardag.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe"></i></a>
+            <a href="https://github.com/mmuratardag" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mmuratardag" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
